@@ -19,11 +19,11 @@
 
     - name: configure a network container in nios
       nios_network:
-        network: {{ networkaddr }}
+        network: "{{ networkaddr }}"
         container: true
         comment: Created by Ansible NIOS Lab deployment
         state: present
         provider:
-          host: {{ nios_grid_url }}
-          username: {{ nios_grid_admin }}
-          password: {{ nios_grid_password }}
+          host: "{{ nios_grid_url }}"
+          username: "{{ nios_grid_admin }}"
+          password: "{{ nios_grid_password }}"
