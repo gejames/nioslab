@@ -10,7 +10,7 @@
 
   vars:
     parent_container: 10.0.0.0/8
-    cidr: 24
+    cidr: 16
     nios_provider:
       host: "{{ nios_grid_url }}"
       username: "{{ nios_grid_username }}"
@@ -24,11 +24,9 @@
 
     - name: configure a network container in nios
       infoblox.nios_modules.nios_network:
-        network: "{{ networkaddr }}"
+        network: "{{ networkaddr[0] }}"
         container: true
         comment: Created by Ansible NIOS Lab deployment
         state: present
-        provider:
-          host: "{{ nios_grid_url }}"
-          username: "{{ nios_grid_username }}"
-          password: "{{ nios_grid_password }}"
+        provider: "{{ nios_provider }}"
+ 
