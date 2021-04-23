@@ -8,7 +8,7 @@
     - infoblox.nios_modules
 
   vars:
-    parent_container: 10.0.0/8
+    parent_container: 10.0.0.0/8
     nios_provider:
         host: "{{ nios_grid_url }}"
         username: "{{ nios_grid_username }}"
