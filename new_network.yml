@@ -30,5 +30,5 @@
         state: present
         provider:
           host: "{{ nios_grid_url }}"
-          username: "{{ nios_grid_admin }}"
+          username: "{{ nios_grid_username }}"
           password: "{{ nios_grid_password }}"
