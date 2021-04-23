@@ -4,6 +4,9 @@
   gather_facts: false
   become: false
 
+  collections:
+    - infoblox.nios_modules
+
   vars:
     parent_container: 10.0.0/8
     nios_provider:
@@ -18,7 +21,7 @@
         networkaddr: "{{ lookup('infoblox.nios_modules.nios_next_network', parent_container, cidr=cidr, provider=nios_provider) }}"
 
     - name: configure a network container in nios
-      nios_network:
+      infoblox.nios_modules.nios_network:
         network: "{{ networkaddr }}"
         container: true
         comment: Created by Ansible NIOS Lab deployment
