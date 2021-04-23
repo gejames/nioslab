@@ -1,6 +1,7 @@
 ---
 - name: configure nios for lab
   hosts: localhost
+  connection: local
   gather_facts: false
   become: false
 
@@ -9,10 +10,11 @@
 
   vars:
     parent_container: 10.0.0.0/8
+    cidr: 24
     nios_provider:
-        host: "{{ nios_grid_url }}"
-        username: "{{ nios_grid_username }}"
-        password: "{{ nios_grid_password }}"
+      host: "{{ nios_grid_url }}"
+      username: "{{ nios_grid_username }}"
+      password: "{{ nios_grid_password }}"
   
   tasks: 
   
